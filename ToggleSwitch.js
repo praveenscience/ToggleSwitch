@@ -20,6 +20,10 @@ class ToggleSwitch extends Component {
       </div>
     );
   }
+  // Set text for rendering.
+  static defaultProps = {
+    Text: ["Yes", "No"]
+  }
 }
 
 export default ToggleSwitch;
