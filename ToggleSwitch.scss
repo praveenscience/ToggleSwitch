@@ -1,3 +1,9 @@
+// Colours
+$label-colour: #ccc;
+$toggle-colour: #f90;
+$white: #fff;
+
+// Styles
 .toggle-switch {
   position: relative;
   width: 75px;
@@ -14,7 +20,7 @@
     display: block;
     overflow: hidden;
     cursor: pointer;
-    border: 0 solid #ccc;
+    border: 0 solid $label-colour;
     border-radius: 20px;
     margin: 0;
   }
@@ -40,15 +46,15 @@
       content: attr(data-yes);
       text-transform: uppercase;
       padding-left: 10px;
-      background-color: #f90;
-      color: #fff;
+      background-color: $toggle-colour;
+      color: $white;
     }
   }
   &-disabled {
-    background-color: #ccc;
+    background-color: $label-colour;
     cursor: not-allowed;
     &:before {
-      background-color: #ccc;
+      background-color: $label-colour;
       cursor: not-allowed;
     }
   }
@@ -56,20 +62,20 @@
     content: attr(data-no);
     text-transform: uppercase;
     padding-right: 10px;
-    background-color: #ccc;
-    color: #fff;
+    background-color: $label-colour;
+    color: $white;
     text-align: right;
   }
   &-switch {
     display: block;
     width: 24px;
     margin: 5px;
-    background: #fff;
+    background: $white;
     position: absolute;
     top: 0;
     bottom: 0;
     right: 40px;
-    border: 0 solid #ccc;
+    border: 0 solid $label-colour;
     border-radius: 20px;
     transition: all 0.3s ease-in 0s;
   }
