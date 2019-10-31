@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
 class ToggleSwitch extends Component {
+  state = {
+    checked: this.props.defaultChecked
+  };
   render() {
     return (
       <div className="toggle-switch">
