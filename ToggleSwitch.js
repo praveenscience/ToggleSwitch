@@ -15,7 +15,7 @@ class ToggleSwitch extends Component {
     this.setState({
       checked: e.target.checked
     });
-    if (typeof this.props.onChange === "function") this.props.onChange();
+    if (typeof this.props.onChange === "function") this.props.onChange(e);
   };
   render() {
     return (
