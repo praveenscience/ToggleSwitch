@@ -1,6 +1,7 @@
 // Colours
-$label-colour: #ccc;
-$toggle-colour: #f90;
+$label-colour: #bbb;
+$disabled-colour: #ddd;
+$toggle-colour: #2F855A;
 $white: #fff;
 
 // Styles
@@ -9,6 +10,7 @@ $white: #fff;
   width: 75px;
   display: inline-block;
   vertical-align: middle;
+  margin: 10px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -51,10 +53,10 @@ $white: #fff;
     }
   }
   &-disabled {
-    background-color: $label-colour;
+    background-color: $disabled-colour !important;
     cursor: not-allowed;
     &:before {
-      background-color: $label-colour;
+      background-color: $disabled-colour !important;
       cursor: not-allowed;
     }
   }
