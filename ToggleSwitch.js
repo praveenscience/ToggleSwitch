@@ -4,15 +4,15 @@ import './ToggleSwitch.scss';
 
 /*
 Toggle Switch Component
-Note: id, checked and onChange are required for ToggleSwitch component to function. The props name, small, disabled
-and optionLabels are optional.
+Note: id, checked and onChange are required for ToggleSwitch component to function.
+The props name, small, disabled and optionLabels are optional.
 Usage: <ToggleSwitch id="id" checked={value} onChange={checked => setValue(checked)}} />
 */
 
 const ToggleSwitch = ({ id, name, checked, onChange, optionLabels, small, disabled }) => {
 
   return (
-      <div className={"toggle-switch" + (small ? " small-switch" : "")}>
+    <div className={"toggle-switch" + (small ? " small-switch" : "")}>
       <input
         type="checkbox"
         name={name}
@@ -35,9 +35,9 @@ const ToggleSwitch = ({ id, name, checked, onChange, optionLabels, small, disabl
             />
             <span
               className={
-                disabled
-                  ? "toggle-switch-switch toggle-switch-disabled"
-                  : "toggle-switch-switch"
+              disabled
+                ? "toggle-switch-switch toggle-switch-disabled"
+                : "toggle-switch-switch"
               }
             />
           </label>
