@@ -4,15 +4,12 @@ import './ToggleSwitch.scss';
 
 /*
 Toggle Switch Component
-Note: id is required for ToggleSwitch component to function. The props name, value, small and onSwitch are optional.
-Usage: <ToggleSwitch id="id" onSwitch={function (checked) { console.log("Checkbox Current State: " + checked); }} />
+Note: id, checked and onChange are required for ToggleSwitch component to function. The props name, small, disabled
+and optionLabels are optional.
+Usage: <ToggleSwitch id="id" checked={value} onChange={checked => setValue(checked)}} />
 */
 
-const ToggleSwitch = ({ id, name, value, defaultChecked, onSwitch, optionLabels, small, disabled }) => {
-
-  const onChange = e => {
-    if (typeof onSwitch === "function") onSwitch(e.target.checked);
-  };
+const ToggleSwitch = ({ id, name, checked, onChange, optionLabels, small, disabled }) => {
 
   return (
       <div className={"toggle-switch" + (small ? " small-switch" : "")}>
@@ -21,10 +18,8 @@ const ToggleSwitch = ({ id, name, value, defaultChecked, onSwitch, optionLabels,
         name={name}
         className="toggle-switch-checkbox"
         id={id}
-        checked={value}
-        defaultChecked={defaultChecked}
-        value={value}
-        onChange={onChange}
+        checked={checked}
+        onChange={e => onChange(e.target.checked)}
         disabled={disabled}
         />
         {id ? (
@@ -58,9 +53,9 @@ ToggleSwitch.defaultProps = {
 
 ToggleSwitch.propTypes = {
   id: PropTypes.string.isRequired,
+  checked: PropTypes.bool.isRequired,
+  onChange: PropTypes.func.isRequired,
   name: PropTypes.string,
-  value: PropTypes.bool,
-  onSwitch: PropTypes.func,
   optionLabels: PropTypes.array,
   small: PropTypes.bool,
   disabled: PropTypes.bool
